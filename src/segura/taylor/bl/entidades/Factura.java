@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Factura {
     /* Variables */
     private String numero;
-    private String cliente;
+    private Cliente cliente;
     private LocalDate fecha;
     private ArrayList<Linea> detalle;
 
@@ -17,7 +17,7 @@ public class Factura {
         this.fecha = LocalDate.now();
         this.detalle = new ArrayList<Linea>();
     }
-    public Factura(String numero, String cliente, int dia, int mes, int anno) {
+    public Factura(String numero, Cliente cliente, int dia, int mes, int anno) {
         this.numero = numero;
         this.cliente = cliente;
         this.fecha = LocalDate.of(anno, mes, dia);
@@ -59,7 +59,7 @@ public class Factura {
         msg = "================================"+ "\n";
         msg = msg + "Joyeria la Perla";
         msg = msg + "\t\t" + "No. " + numero + "\n";
-        msg = msg + "cliente: " + cliente + " ";
+        msg = msg + "cliente: " + cliente.toString() + " ";
         msg = msg + "\t" + fecha.toString() + "\n";
         msg = msg + "------------------------------------------" + "\n";
         msg = msg + "cant" + "\t"+ "codigo" + "\t"+ "descrip" +
