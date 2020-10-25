@@ -105,6 +105,7 @@ public class Controlador {
         ui.imprimirLinea("Seleccione un genero: ");
         ui.imprimirLinea("1. Masculino");
         ui.imprimirLinea("2. Femenino");
+        ui.imprimirLinea("3. Otro");
         ui.imprimir("Su opcion: ");
         int opcionGenero = ui.leerEntero();
         Cliente.Genero genero;
@@ -152,12 +153,12 @@ public class Controlador {
         Factura facturaActual;
 
         ui.imprimirLinea("\nCreacion de factura");
-        ui.imprimirLinea("Numero: ");
+        ui.imprimir("Numero: ");
         String numero = ui.leerLinea();
 
         Cliente cliente;
         do{
-            ui.imprimirLinea("Identificacion del cliente: ");
+            ui.imprimir("Identificacion del cliente: ");
             String idCliente = ui.leerLinea();
 
             //Primero busca un cliente con ese id.

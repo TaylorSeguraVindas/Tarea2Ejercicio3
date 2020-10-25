@@ -89,13 +89,13 @@ public class Factura {
         msg = "================================"+ "\n";
         msg = msg + "Joyeria la Perla";
         msg = msg + "\t\t" + "No. " + numero + "\n";
-        msg = msg + "cliente: " + cliente.toString() + " ";
+        msg = msg + "cliente: " + cliente.getNombre() + " ";
         msg = msg + "\t" + fecha.toString() + "\n";
         msg = msg + "------------------------------------------" + "\n";
         msg = msg + "cant" + "\t"+ "codigo" + "\t"+ "descrip" +
                 "\t"+ "precio" + "\t"+ "costo" + "\n";
         for (Linea objLinea: detalle) {
-            msg += objLinea.toString() + "\n";
+            msg += objLinea.stringParaFactura() + "\n";
         }
 
         msg = msg + "\t\t\t\t" + "----------" + "\n";

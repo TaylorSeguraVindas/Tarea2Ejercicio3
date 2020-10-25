@@ -27,4 +27,10 @@ public class Linea {
         msg += calcularCosto() + "\t";
         return msg;
     }
+
+    public String stringParaFactura(){
+        String msg = cantidad + "\t" + producto.getCodigo() + "\t" + producto.getDescripcion() +
+                "\t" + producto.getPrecio() + "\t" + producto.getPrecio();
+        return msg;
+    }
 }
