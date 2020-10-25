@@ -11,10 +11,23 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 
+
+/**
+ * La clase Controlador se usa para realizar la comunicación entre
+ * el UI y el Gestor
+ *
+ * @author Taylor Segura Vindas
+ * @version 1.0
+ * @since 2020-10-24
+ */
+
 public class Controlador {
     private UI ui = new UI();
     private Gestor gestor = new Gestor();
 
+    /**
+     * Este metodo se usa para iniciar el comportamiento del controlador
+     */
     public void iniciarPrograma(){
         int opcion = 0;
 
@@ -33,6 +46,10 @@ public class Controlador {
         } while(opcion != 7);
     }
 
+    /**
+     * Este metodo se usa para realizar una accion basado en la opcion recibida como parametro
+     * @param opcion la opcion que ha elegido el usuario
+     */
     private void procesarOpcion(int opcion){
         switch(opcion){
             case 1:
@@ -61,6 +78,12 @@ public class Controlador {
                 break;
         }
     }
+
+    /**
+     * Este metodo se usa para calcular una edad basado en la fecha de nacimiento enviada como parametro
+     * @param fechaNacimiento la fecha que se va a usar para calcular la edad
+     * @return un entero que representa la edad en años
+     */
     private int calcularEdad(LocalDate fechaNacimiento){
         LocalDate fechaActual = LocalDate.now();
         Period period = Period.between(fechaNacimiento, fechaActual);
@@ -68,6 +91,11 @@ public class Controlador {
         return period.getYears();
     }
 
+    /**
+     * Este metodo se usa para registrar un nuevo producto
+     * @return un objeto de la clase Producto si el registro es correcto, null si ocurre un error
+     * @see Producto
+     */
     private Producto registrarProducto(){
         //String codigo, String descripcion, float precio
         ui.imprimirLinea("\n\nRegistro de producto");
@@ -87,6 +115,10 @@ public class Controlador {
         }
         return null;
     }
+
+    /**
+     * Este metodo se usa para mostrar toda la lista de productos guardados
+     */
     private void listarProductos(){
         ui.imprimirLinea("\n\nLista de productos");
         ArrayList<Producto> productos = gestor.listarProductos();
@@ -95,6 +127,11 @@ public class Controlador {
         }
     }
 
+    /**
+     * Este metodo se usa para registrar un nuevo cliente
+     * @return un objeto de la clase Cliente si el registro es correcto, null si ocurre un error
+     * @see Cliente
+     */
     private Cliente registrarCliente(){
         ui.imprimirLinea("\n\nRegistro de cliente");
         ui.imprimir("Nombre: ");
@@ -141,6 +178,10 @@ public class Controlador {
         }
         return null;
     }
+
+    /**
+     * Este metodo se usa para mostrar toda la lista de clientes guardados
+     */
     private void listarClientes(){
         ui.imprimirLinea("\n\nLista de clientes");
         ArrayList<Cliente> clientes = gestor.listarClientes();
@@ -149,6 +190,11 @@ public class Controlador {
         }
     }
 
+    /**
+     * Este metodo se usa para registrar una nueva factura
+     * @return un objeto de la clase Factura si el registro es correcto, null si ocurre un error
+     * @see Factura
+     */
     private Factura crearFactura(){
         Factura facturaActual;
 
@@ -224,6 +270,10 @@ public class Controlador {
         }
         return null;
     }
+
+    /**
+     * Este metodo se usa para mostrar toda la lista de facturas guardadas
+     */
     private void listarFacturas(){
         ui.imprimirLinea("\n\nLista de facturas");
         ArrayList<Factura> facturas = gestor.listarFacturas();
@@ -231,6 +281,12 @@ public class Controlador {
             ui.imprimirLinea("\n\n" + objFactura.toString());
         }
     }
+
+    /**
+     * Este metodo se usa para crear una nueva linea de detalle para una factura
+     * @return un objeto de la clase Linea.
+     * @see Linea
+     */
     private Linea crearLinea(){
         //float pCantidad, Producto pProducto
         Producto producto;
