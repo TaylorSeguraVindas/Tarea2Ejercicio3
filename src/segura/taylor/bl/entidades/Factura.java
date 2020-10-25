@@ -48,8 +48,8 @@ public class Factura {
     }
 
     /* Agregar una linea de detalle a la factura */
-    public void agregarLinea(int pCantidad, String pCodigo, String pDescripcion, float pPrecio){
-        this.detalle.add(new Linea(pCantidad, pCodigo, pDescripcion, pPrecio));
+    public void agregarLinea(int pCantidad, Producto pProducto){
+        this.detalle.add(new Linea(pCantidad, pProducto));
     }
 
     /* Version en texto de todos los datos de la factura */
