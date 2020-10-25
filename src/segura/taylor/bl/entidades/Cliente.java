@@ -55,6 +55,16 @@ public class Cliente {
 
     /* Constructores */
     public Cliente(){}
+
+    /**
+     * Metodo constructor para la clase Cliente
+     * @param nombre un String que contiene el nombre del cliente
+     * @param identificacion un String que contiene la identificacion del cliente
+     * @param genero un valor del enumerador Cliente.Genero que define el genero del cliente
+     * @param fechaNacimiento un objeto LocalDate que define la fecha de nacimiento del cliente
+     * @param edad un entero que define la edad del cliente
+     * @see LocalDate
+     */
     public Cliente(String nombre, String identificacion, Genero genero, LocalDate fechaNacimiento, int edad) {
         this.nombre = nombre;
         this.identificacion = identificacion;

@@ -32,6 +32,13 @@ public class Producto {
 
     /* Constructores */
     public Producto(){}
+
+    /**
+     * Metodo constructor para la clase Producto
+     * @param codigo String que contiene el codigo del producto
+     * @param descripcion String que contiene la descripcion del producto
+     * @param precio double que contiene el precio del producto
+     */
     public Producto(String codigo, String descripcion, double precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;

@@ -44,6 +44,16 @@ public class Factura {
         this.fecha = LocalDate.now();
         this.detalle = new ArrayList<Linea>();
     }
+
+    /**
+     * Metodo constructor para la clase Factura
+     * @param numero un String que contiene el numero o codigo de esta factura
+     * @param cliente un objeto de la clase Cliente
+     * @param dia entero que define el dia de la fecha actual
+     * @param mes entero que define el mes de la fecha actual
+     * @param anno entero que define el año de la fecha actual
+     * @see Cliente
+     */
     public Factura(String numero, Cliente cliente, int dia, int mes, int anno) {
         this.numero = numero;
         this.cliente = cliente;
@@ -67,7 +77,9 @@ public class Factura {
         return impuesto;
     }
 
-    /* Total de la factura (subtotal + impuesto) */
+    /**
+     *  Total de la factura (subtotal + impuesto)
+     *  @return Total de la factura*/
     public float calcularTotal(){
         float total;
         total = calcularSubtotal() + calcularImpuesto();
