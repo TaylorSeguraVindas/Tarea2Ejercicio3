@@ -6,7 +6,7 @@ public class Producto {
     /* Variables */
     private String codigo;
     private String descripcion;
-    private float precio;
+    private double precio;
 
     /* Propiedades */
     public String getCodigo() {
@@ -23,16 +23,16 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return precio;
     }
-    public void setPrecio(float precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
     /* Constructores */
     public Producto(){}
-    public Producto(String codigo, String descripcion, float precio) {
+    public Producto(String codigo, String descripcion, double precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -52,7 +52,7 @@ public class Producto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Producto producto = (Producto) o;
-        return Float.compare(producto.precio, precio) == 0 &&
+        return Double.compare(producto.precio, precio) == 0 &&
                 Objects.equals(codigo, producto.codigo) &&
                 Objects.equals(descripcion, producto.descripcion);
     }

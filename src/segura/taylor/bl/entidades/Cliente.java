@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Cliente {
     /* Enums */
-    enum Genero{
+    public enum Genero{
         MASCULINO,
         FEMENINO,
         SIN_ESPECIFICAR

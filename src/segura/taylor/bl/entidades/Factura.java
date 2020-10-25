@@ -11,6 +11,33 @@ public class Factura {
     private ArrayList<Linea> detalle;
 
     /* Propiedades */
+    public String getNumero() {
+        return numero;
+    }
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public ArrayList<Linea> getDetalle() {
+        return detalle;
+    }
+    public void setDetalle(ArrayList<Linea> detalle) {
+        this.detalle = detalle;
+    }
 
     /* Constructores */
     public Factura(){
@@ -50,6 +77,9 @@ public class Factura {
     /* Agregar una linea de detalle a la factura */
     public void agregarLinea(int pCantidad, Producto pProducto){
         this.detalle.add(new Linea(pCantidad, pProducto));
+    }
+    public void agregarLinea(Linea nuevaLinea){
+        this.detalle.add(nuevaLinea);
     }
 
     /* Version en texto de todos los datos de la factura */

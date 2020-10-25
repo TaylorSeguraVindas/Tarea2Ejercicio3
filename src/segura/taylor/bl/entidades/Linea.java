@@ -15,7 +15,7 @@ public class Linea {
 
     /* Metodos */
     /* Costo de una linea (cantidad por el precio) */
-    public float calcularCosto(){
+    public double calcularCosto(){
         return (cantidad * producto.getPrecio());
     }
 
